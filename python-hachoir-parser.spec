@@ -11,7 +11,7 @@ BuildRoot: 	%{_tmppath}/%{name}-buildroot
 Url: 		http://hachoir.org/wiki/hachoir-parser
 BuildArch:  noarch
 Requires:   python-hachoir-core
-BuildRequires: python
+BuildRequires: python-devel
 %description
 hachoir-parser is a package of most common file format parsers written 
 using hachoir-core. Not all parsers are complete, some are very good and 
