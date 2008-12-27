@@ -1,17 +1,19 @@
 %define module_name hachoir-parser
 
-Summary:    Python library to parse file format for the hachoir framework
+Summary:	Python library to parse file format for the hachoir framework
 Name: 		python-%{module_name}
-Version: 	1.0
-Release: 	%mkrel 3
-Source0: 	%{module_name}-%{version}.tar.bz2
-License:	GPL
+Version: 	1.2.1
+Release: 	%mkrel 1
+Source0: 	ttp://cheeseshop.python.org/packages/source/h/%{module_name}/%{module_name}-%{version}.tar.gz
+License:	GPLv2
 Group: 		Development/Python
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-Url: 		http://hachoir.org/wiki/hachoir-parser
-BuildArch:  noarch
-Requires:   python-hachoir-core
-BuildRequires: python-devel
+URL: 		http://hachoir.org/wiki/hachoir-parser
+BuildArch:	noarch
+Requires:	python-hachoir-core
+%{py_requires -d}
+BuildRequires:	python-setuptools
+
 %description
 hachoir-parser is a package of most common file format parsers written 
 using hachoir-core. Not all parsers are complete, some are very good and 
@@ -26,19 +28,19 @@ to know *each* bit meaning. Some good (but not perfect ;-)) parsers:
     * TAR and ZIP archive 
 
 %prep
-%setup -q -n %{module_name}-%version
+%setup -q -n %{module_name}-%{version}
 
 %build
 python setup.py build
 
 %install
-rm -rf $RPM_BUILD_ROOT
-python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+rm -rf %{buildroot}
+python setup.py install --root=%{buildroot} --record=INSTALLED_FILES
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files -f INSTALLED_FILES
 %defattr(-,root,root)
 %doc AUTHORS COPYING README 
-%dir %py_puresitedir/hachoir_parser
+%dir %{py_puresitedir}/hachoir_parser
