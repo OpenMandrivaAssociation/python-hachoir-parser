@@ -35,12 +35,13 @@ python setup.py build
 
 %install
 rm -rf %{buildroot}
-python setup.py install --root=%{buildroot} --record=INSTALLED_FILES
+python setup.py install --root=%{buildroot} 
 
 %clean
 rm -rf %{buildroot}
 
-%files -f INSTALLED_FILES
+%files 
 %defattr(-,root,root)
 %doc AUTHORS COPYING 
-%dir %{py_puresitedir}/hachoir_parser
+%{py_puresitedir}/hachoir_parser
+%{py_puresitedir}/*.egg-info
