@@ -3,7 +3,7 @@
 Summary:	Python library to parse file format for the hachoir framework
 Name: 		python-%{module_name}
 Version: 	1.3.4
-Release: 	%mkrel 1
+Release: 	%mkrel 2
 Source0: 	http://cheeseshop.python.org/packages/source/h/%{module_name}/%{module_name}-%{version}.tar.gz
 License:	GPLv2
 Group: 		Development/Python
