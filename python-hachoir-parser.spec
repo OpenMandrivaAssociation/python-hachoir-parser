@@ -8,7 +8,7 @@ Release: 	3
 Source0: 	http://cheeseshop.python.org/packages/source/h/%{module_name}/%{module_name}-%{version}.tar.gz
 License:	GPLv2
 Group: 		Development/Python
-URL: 		http://hachoir.org/wiki/hachoir-parser
+URL: 		https://hachoir.org/wiki/hachoir-parser
 BuildArch:	noarch
 Requires:	python-hachoir-core
 BuildRequires:  python-devel
